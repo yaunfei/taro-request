@@ -1,0 +1,45 @@
+{
+	"name": "@yaunfei/taro-request",
+	"version": "1.0.0",
+	"description": "taro 请求库",
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"type": "module",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"scripts": {
+		"dev": "rollup -c -w",
+		"build": "rollup -c",
+		"clean": "rm -rf dist",
+		"prepublish": "npm run clean && npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yaunfei/taro-request.git"
+	},
+	"keywords": [
+		"taro",
+		"request",
+		"http"
+	],
+	"author": "yaunfei",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/yaunfei/taro-request/issues"
+	},
+	"homepage": "https://github.com/yaunfei/taro-request#readme",
+	"devDependencies": {
+		"@babel/core": "^7.20.12",
+		"@babel/preset-env": "^7.20.2",
+		"@rollup/plugin-babel": "^6.0.3",
+		"@tarojs/taro": "^3.5.6",
+		"rollup": "2.60.0",
+		"rollup-plugin-terser": "^7.0.2",
+		"rollup-plugin-typescript2": "^0.34.1",
+		"tslib": "^2.5.0",
+		"typescript": "^4.9.5"
+	},
+	"dependencies": {}
+}

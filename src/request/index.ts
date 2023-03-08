@@ -54,7 +54,12 @@ export function request(
 							) {
 								conf?.quiet ? reject(response.data) : errPage();
 							}
-							resolve(response.data.data); // 成功返回
+							if (response.data.hasOwnProperty("data")) {
+								resolve(response.data.data); // 成功返回
+							} else {
+								resolve(response.data); // 成功返回
+							}
+
 							// 没有登录或token超时
 						} else if ([403, "403", 401, "401"].includes(response.statusCode)) {
 							Taro.clearStorageSync();

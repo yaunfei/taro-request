@@ -10,6 +10,7 @@ interface ParamsInterface {
 	type?: string;
 	header?: object;
 	noLoginPage?: boolean; // 是否跳转到登录页面
+	option: any
 }
 
 export function request(
@@ -74,6 +75,7 @@ export function request(
 					complete() {
 						Taro.hideLoading();
 					},
+					...conf?.option
 				});
 			}
 		});

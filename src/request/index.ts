@@ -64,7 +64,13 @@ export function request(
               // 没有登录或token超时
             } else if ([403, "403", 401, "401"].includes(response.statusCode)) {
               Taro.clearStorageSync();
-              !conf?.noLoginPage && goLoginPage(); // 是否跳转到登录页面
+              // !conf?.noLoginPage && goLoginPage(); // 是否跳转到登录页面
+              // 是否跳转到登录页面
+              if (!conf?.noLoginPage) {
+                goLoginPage();
+              } else {
+                reject(response.data);
+              }
             } else {
               conf?.quiet ? reject(response.data) : errPage();
             }
@@ -72,7 +78,13 @@ export function request(
           fail(error: any) {
             if ([403, "403", 401, "401"].includes(error?.statusCode)) {
               Taro.clearStorageSync();
-              !conf?.noLoginPage && goLoginPage(); // 是否跳转到登录页面
+              // !conf?.noLoginPage && goLoginPage(); // 是否跳转到登录页面
+              // 是否跳转到登录页面
+              if (!conf?.noLoginPage) {
+                goLoginPage();
+              } else {
+                reject(error);
+              }
             } else {
               conf?.quiet ? reject(error) : errPage();
             }

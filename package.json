@@ -1,6 +1,6 @@
 {
 	"name": "@yaunfei/taro-request",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"description": "taro 请求库",
 	"main": "dist/index.js",
 	"module": "dist/index.js",

@@ -21,9 +21,9 @@ export function request(
       title: "加载中...",
     });
     if (conf.data) {
-      // 微信的get请求，无法过滤掉undefine, null
+      // 微信的get请求，无法过滤掉undefine, null, ""
       for (let i in conf.data) {
-        if (["undefined", null, undefined].includes(conf.data[i])) delete conf.data[i];
+        if (["undefined", null, undefined, ""].includes(conf.data[i])) delete conf.data[i];
       }
     }
     return new Promise(async (resolve, reject) => {
